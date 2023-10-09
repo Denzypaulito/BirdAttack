@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dn5k6uayxrl6u"]
+
+[ext_resource type="Script" path="res://prefabs/bird.gd" id="1_pdwsl"]
+[ext_resource type="Texture2D" uid="uid://bfg5mw7uo3bgk" path="res://Elementos/BirdBlue.png" id="2_ws405"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e7jfb"]
+bounce = 0.4
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xf7rr"]
+
+[node name="bird_prefab" type="RigidBody2D"]
+mass = 5.0
+physics_material_override = SubResource("PhysicsMaterial_e7jfb")
+continuous_cd = 2
+script = ExtResource("1_pdwsl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xf7rr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-3.8147e-06, 0)
+scale = Vector2(0.019043, 0.019043)
+texture = ExtResource("2_ws405")

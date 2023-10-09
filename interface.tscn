@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvxhe01o2b48y"]
+
+[ext_resource type="FontFile" uid="uid://cyjt4wgsdkk2k" path="res://Elementos/angrybirds-regular.ttf" id="1_6ulnw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ejsfi"]
+font = ExtResource("1_6ulnw")
+font_size = 40
+
+[node name="Interface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Nivel" type="Label" parent="CanvasLayer"]
+offset_left = 1013.0
+offset_top = 1.0
+offset_right = 1116.0
+offset_bottom = 51.0
+text = "Nivel: "
+label_settings = SubResource("LabelSettings_ejsfi")
+
+[node name="Nivel2" type="Label" parent="CanvasLayer"]
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 107.0
+offset_bottom = 52.0
+text = "Score: "
+label_settings = SubResource("LabelSettings_ejsfi")
