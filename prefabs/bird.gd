@@ -26,6 +26,7 @@ func _process(delta):
 				apply_impulse(imp)
 				doShot = false
 				isShot = true
+	
 
 
 func fshooting():

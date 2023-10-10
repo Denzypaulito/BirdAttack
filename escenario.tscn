@@ -1,11 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://drv5xc2j3ij5h"]
+[gd_scene load_steps=12 format=3 uid="uid://drv5xc2j3ij5h"]
 
-[ext_resource type="Script" path="res://Escenario.gd" id="1_yblxv"]
 [ext_resource type="Texture2D" uid="uid://c6nmqqs6qe46v" path="res://Elementos/grass tileset.png" id="2_jh8tk"]
 [ext_resource type="Script" path="res://Resortera.gd" id="3_olivd"]
 [ext_resource type="Texture2D" uid="uid://dxu43fqt8vw7l" path="res://Elementos/Resortera.png" id="3_q87cr"]
 [ext_resource type="PackedScene" uid="uid://b8km7i2uaane1" path="res://Elementos/box_wood.tscn" id="5_yhbli"]
 [ext_resource type="Texture2D" uid="uid://rnuj6ee643a5" path="res://Elementos/CieloReal.jpg" id="6_7e21f"]
+[ext_resource type="PackedScene" uid="uid://ddoihiulfvnak" path="res://Elementos/box_stone.tscn" id="7_hyjw3"]
+[ext_resource type="PackedScene" uid="uid://1kh3csvb3fky" path="res://triple_bird.tscn" id="8_ihh3w"]
+
+[sub_resource type="GDScript" id="GDScript_usvm8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m05xa"]
 texture = ExtResource("2_jh8tk")
@@ -515,7 +518,7 @@ distance = -529.0
 
 [node name="Escenario" type="Node2D"]
 process_mode = 3
-script = ExtResource("1_yblxv")
+script = SubResource("GDScript_usvm8")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_t05lh")
@@ -535,6 +538,12 @@ texture = ExtResource("3_q87cr")
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(128, 426)
 script = ExtResource("3_olivd")
+
+[node name="CieloReal" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(664.063, 337)
+scale = Vector2(0.867325, 0.688265)
+texture = ExtResource("6_7e21f")
 
 [node name="Button" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -574,16 +583,31 @@ position = Vector2(840, 433)
 position = Vector2(840, 406)
 
 [node name="BoxWood11" parent="." instance=ExtResource("5_yhbli")]
-position = Vector2(941, 45)
+position = Vector2(937, 488)
 
 [node name="BoxWood12" parent="." instance=ExtResource("5_yhbli")]
-position = Vector2(939, 508)
+position = Vector2(938, 514)
 
-[node name="CieloReal" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(577, 337)
-scale = Vector2(0.753592, 0.688265)
-texture = ExtResource("6_7e21f")
+[node name="BoxStone" parent="." instance=ExtResource("7_hyjw3")]
+position = Vector2(736, 386)
+
+[node name="BoxStone2" parent="." instance=ExtResource("7_hyjw3")]
+position = Vector2(842, 379)
+
+[node name="BoxStone3" parent="." instance=ExtResource("7_hyjw3")]
+position = Vector2(938, 383)
+
+[node name="BoxWood13" parent="." instance=ExtResource("5_yhbli")]
+position = Vector2(938, 462)
+
+[node name="BoxWood14" parent="." instance=ExtResource("5_yhbli")]
+position = Vector2(939, 436)
+
+[node name="BoxWood15" parent="." instance=ExtResource("5_yhbli")]
+position = Vector2(939, 410)
+
+[node name="TripleBird" parent="." instance=ExtResource("8_ihh3w")]
+position = Vector2(255, 246)
 
 [connection signal="button_down" from="Button" to="Node2D" method="_on_button_button_down"]
 [connection signal="button_up" from="Button" to="Node2D" method="_on_button_button_up"]

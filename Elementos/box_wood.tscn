@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8km7i2uaane1"]
+[gd_scene load_steps=6 format=3 uid="uid://b8km7i2uaane1"]
 
+[ext_resource type="Script" path="res://Elementos/block.gd" id="1_fjun2"]
 [ext_resource type="Texture2D" uid="uid://c81cub2fh58i3" path="res://Elementos/BoxWood.png" id="1_g1upr"]
-[ext_resource type="Script" path="res://Elementos/box_wood.gd" id="1_k6d8m"]
+[ext_resource type="Texture2D" uid="uid://cqnwnyk4dwmav" path="res://Elementos/BoxWoodDamaged.png" id="2_bkxpt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sgfpi"]
 size = Vector2(24.4297, 24.9297)
@@ -13,7 +14,11 @@ mass = 0.8
 gravity_scale = 0.7
 max_contacts_reported = 1
 contact_monitor = true
-script = ExtResource("1_k6d8m")
+script = ExtResource("1_fjun2")
+health = 50
+maxHealth = 50
+damaged = ExtResource("2_bkxpt")
+broken = ExtResource("2_bkxpt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_sgfpi")
