@@ -12,6 +12,8 @@ bounce = 0.4
 mass = 5.0
 physics_material_override = SubResource("PhysicsMaterial_e7jfb")
 continuous_cd = 2
+max_contacts_reported = 20
+contact_monitor = true
 script = ExtResource("1_pdwsl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -21,3 +23,5 @@ shape = SubResource("CircleShape2D_xf7rr")
 position = Vector2(-3.8147e-06, 0)
 scale = Vector2(0.019043, 0.019043)
 texture = ExtResource("2_ws405")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

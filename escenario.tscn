@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://drv5xc2j3ij5h"]
+[gd_scene load_steps=15 format=3 uid="uid://drv5xc2j3ij5h"]
 
 [ext_resource type="Texture2D" uid="uid://c6nmqqs6qe46v" path="res://Elementos/grass tileset.png" id="2_jh8tk"]
 [ext_resource type="Script" path="res://Resortera.gd" id="3_olivd"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://b8km7i2uaane1" path="res://Elementos/Escenas/box_wood.tscn" id="5_yhbli"]
 [ext_resource type="Texture2D" uid="uid://rnuj6ee643a5" path="res://Elementos/CieloReal.jpg" id="6_7e21f"]
 [ext_resource type="PackedScene" uid="uid://ddoihiulfvnak" path="res://Elementos/Escenas/box_stone.tscn" id="7_hyjw3"]
-[ext_resource type="PackedScene" uid="uid://1kh3csvb3fky" path="res://prefabs/triple_bird.tscn" id="8_ihh3w"]
 [ext_resource type="PackedScene" uid="uid://dpe37822exiyf" path="res://Elementos/Escenas/triangle_wood.tscn" id="8_mndi7"]
 [ext_resource type="PackedScene" uid="uid://dau2gac863w1e" path="res://Elementos/Escenas/triangle_stone.tscn" id="9_538bj"]
 [ext_resource type="PackedScene" uid="uid://83bobavqkbb5" path="res://Elementos/Escenas/table_wood.tscn" id="10_kmvxq"]
@@ -609,9 +608,6 @@ position = Vector2(939, 436)
 
 [node name="BoxWood15" parent="." instance=ExtResource("5_yhbli")]
 position = Vector2(939, 410)
-
-[node name="TripleBird" parent="." instance=ExtResource("8_ihh3w")]
-position = Vector2(255, 246)
 
 [node name="BoxWood16" parent="." instance=ExtResource("8_mndi7")]
 position = Vector2(736, 354)

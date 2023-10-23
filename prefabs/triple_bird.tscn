@@ -4,10 +4,6 @@
 
 [node name="TripleBird" type="Node2D"]
 
-[node name="bird_prefab" parent="." instance=ExtResource("1_qgoea")]
-linear_velocity = Vector2(500, 250)
-script = null
-
 [node name="bird_prefab2" parent="." instance=ExtResource("1_qgoea")]
 position = Vector2(0, -21)
 linear_velocity = Vector2(559, 0)
