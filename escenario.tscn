@@ -1,12 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://drv5xc2j3ij5h"]
+[gd_scene load_steps=16 format=3 uid="uid://drv5xc2j3ij5h"]
 
 [ext_resource type="Texture2D" uid="uid://c6nmqqs6qe46v" path="res://Elementos/grass tileset.png" id="2_jh8tk"]
 [ext_resource type="Script" path="res://Resortera.gd" id="3_olivd"]
 [ext_resource type="Texture2D" uid="uid://dxu43fqt8vw7l" path="res://Elementos/Resortera.png" id="3_q87cr"]
-[ext_resource type="PackedScene" uid="uid://b8km7i2uaane1" path="res://Elementos/box_wood.tscn" id="5_yhbli"]
+[ext_resource type="PackedScene" uid="uid://b8km7i2uaane1" path="res://Elementos/Escenas/box_wood.tscn" id="5_yhbli"]
 [ext_resource type="Texture2D" uid="uid://rnuj6ee643a5" path="res://Elementos/CieloReal.jpg" id="6_7e21f"]
-[ext_resource type="PackedScene" uid="uid://ddoihiulfvnak" path="res://Elementos/box_stone.tscn" id="7_hyjw3"]
-[ext_resource type="PackedScene" uid="uid://1kh3csvb3fky" path="res://triple_bird.tscn" id="8_ihh3w"]
+[ext_resource type="PackedScene" uid="uid://ddoihiulfvnak" path="res://Elementos/Escenas/box_stone.tscn" id="7_hyjw3"]
+[ext_resource type="PackedScene" uid="uid://1kh3csvb3fky" path="res://prefabs/triple_bird.tscn" id="8_ihh3w"]
+[ext_resource type="PackedScene" uid="uid://dpe37822exiyf" path="res://Elementos/Escenas/triangle_wood.tscn" id="8_mndi7"]
+[ext_resource type="PackedScene" uid="uid://dau2gac863w1e" path="res://Elementos/Escenas/triangle_stone.tscn" id="9_538bj"]
+[ext_resource type="PackedScene" uid="uid://83bobavqkbb5" path="res://Elementos/Escenas/table_wood.tscn" id="10_kmvxq"]
+[ext_resource type="PackedScene" uid="uid://clahrwa56uvar" path="res://Elementos/Escenas/table_stone.tscn" id="11_tgcdq"]
 
 [sub_resource type="GDScript" id="GDScript_usvm8"]
 
@@ -608,6 +612,24 @@ position = Vector2(939, 410)
 
 [node name="TripleBird" parent="." instance=ExtResource("8_ihh3w")]
 position = Vector2(255, 246)
+
+[node name="BoxWood16" parent="." instance=ExtResource("8_mndi7")]
+position = Vector2(736, 354)
+
+[node name="BoxWood18" parent="." instance=ExtResource("8_mndi7")]
+position = Vector2(938, 350)
+
+[node name="BoxWood17" parent="." instance=ExtResource("9_538bj")]
+position = Vector2(842, 347)
+
+[node name="BoxWood19" parent="." instance=ExtResource("10_kmvxq")]
+position = Vector2(736, 370)
+
+[node name="BoxWood20" parent="." instance=ExtResource("10_kmvxq")]
+position = Vector2(938, 366)
+
+[node name="BoxWood21" parent="." instance=ExtResource("11_tgcdq")]
+position = Vector2(842, 363)
 
 [connection signal="button_down" from="Button" to="Node2D" method="_on_button_button_down"]
 [connection signal="button_up" from="Button" to="Node2D" method="_on_button_button_up"]

@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://clahrwa56uvar"]
+
+[ext_resource type="Script" path="res://Elementos/block.gd" id="1_rorhf"]
+[ext_resource type="Texture2D" uid="uid://btslk27o2fvr6" path="res://Elementos/Material/TableStoneDamaged.png" id="2_a7ffy"]
+[ext_resource type="Texture2D" uid="uid://cwhokvqhqbghj" path="res://Elementos/Material/TableStoneBroken.png" id="3_hn6rw"]
+[ext_resource type="Texture2D" uid="uid://y0qc0ytmvs7v" path="res://Elementos/Material/TableStone.png" id="4_uw7xq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n0ejt"]
+size = Vector2(60, 6)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tdkbp"]
+
+[node name="BoxWood" type="RigidBody2D"]
+mass = 0.8
+gravity_scale = 0.7
+max_contacts_reported = 1
+contact_monitor = true
+script = ExtResource("1_rorhf")
+health = 60
+maxHealth = 60
+damaged = ExtResource("2_a7ffy")
+broken = ExtResource("3_hn6rw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(9.53674e-07, 0)
+shape = SubResource("RectangleShape2D_n0ejt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.0937495, 0.0949988)
+scale = Vector2(0.3225, 0.3225)
+texture = ExtResource("4_uw7xq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_tdkbp")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cantmlj7fan28"
-path="res://.godot/imported/BoxStone.png-2291099556fe1c4922a992dd2cd55431.ctex"
+uid="uid://cosax485uyo8d"
+path="res://.godot/imported/TableWoodBroken.png-01c8fa211e67d50021d0e714ed57f85c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Elementos/BoxStone.png"
-dest_files=["res://.godot/imported/BoxStone.png-2291099556fe1c4922a992dd2cd55431.ctex"]
+source_file="res://Elementos/Material/TableWoodBroken.png"
+dest_files=["res://.godot/imported/TableWoodBroken.png-01c8fa211e67d50021d0e714ed57f85c.ctex"]
 
 [params]
 

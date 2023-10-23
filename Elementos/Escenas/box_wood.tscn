@@ -1,11 +1,11 @@
 [gd_scene load_steps=6 format=3 uid="uid://b8km7i2uaane1"]
 
 [ext_resource type="Script" path="res://Elementos/block.gd" id="1_fjun2"]
-[ext_resource type="Texture2D" uid="uid://c81cub2fh58i3" path="res://Elementos/BoxWood.png" id="1_g1upr"]
-[ext_resource type="Texture2D" uid="uid://cqnwnyk4dwmav" path="res://Elementos/BoxWoodDamaged.png" id="2_bkxpt"]
+[ext_resource type="Texture2D" uid="uid://c81cub2fh58i3" path="res://Elementos/Material/BoxWood.png" id="1_g1upr"]
+[ext_resource type="Texture2D" uid="uid://cqnwnyk4dwmav" path="res://Elementos/Material/BoxWoodDamaged.png" id="2_bkxpt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sgfpi"]
-size = Vector2(24.4297, 24.9297)
+size = Vector2(24, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tdkbp"]
 

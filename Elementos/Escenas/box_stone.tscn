@@ -1,9 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://ddoihiulfvnak"]
 
 [ext_resource type="Script" path="res://Elementos/block.gd" id="1_dpyh6"]
-[ext_resource type="Texture2D" uid="uid://d1ffiod4k0orf" path="res://Elementos/BoxStoneDamaged.png" id="2_6e848"]
-[ext_resource type="Texture2D" uid="uid://c8mmn5m3owyh" path="res://Elementos/BoxStoneBroken.png" id="3_xquoj"]
-[ext_resource type="Texture2D" uid="uid://cantmlj7fan28" path="res://Elementos/BoxStone.png" id="4_qqjag"]
+[ext_resource type="Texture2D" uid="uid://d1ffiod4k0orf" path="res://Elementos/Material/BoxStoneDamaged.png" id="2_6e848"]
+[ext_resource type="Texture2D" uid="uid://c8mmn5m3owyh" path="res://Elementos/Material/BoxStoneBroken.png" id="3_xquoj"]
+[ext_resource type="Texture2D" uid="uid://cantmlj7fan28" path="res://Elementos/Material/BoxStone.png" id="4_qqjag"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sgfpi"]
 size = Vector2(24.4297, 24.9297)

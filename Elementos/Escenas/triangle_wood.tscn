@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://dpe37822exiyf"]
+
+[ext_resource type="Script" path="res://Elementos/block.gd" id="1_vuynn"]
+[ext_resource type="Texture2D" uid="uid://owpnwtwyqc4o" path="res://Elementos/Material/TriangleWoodDamaged.png" id="2_urmfk"]
+[ext_resource type="Texture2D" uid="uid://d046y1ng7urmr" path="res://Elementos/Material/TriangleWoodBroken.png" id="3_xgine"]
+[ext_resource type="Texture2D" uid="uid://vjvifkumr2cr" path="res://Elementos/Material/TriangleWood.png" id="4_gejsd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tdkbp"]
+
+[node name="BoxWood" type="RigidBody2D"]
+mass = 0.8
+gravity_scale = 0.7
+max_contacts_reported = 1
+contact_monitor = true
+script = ExtResource("1_vuynn")
+health = 50
+maxHealth = 50
+damaged = ExtResource("2_urmfk")
+broken = ExtResource("3_xgine")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, -12, -12, 11, 12, 11)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.0937495, 0.0949988)
+scale = Vector2(0.3225, 0.3225)
+texture = ExtResource("4_gejsd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_tdkbp")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

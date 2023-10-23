@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c81cub2fh58i3"
-path="res://.godot/imported/BoxWood.png-75112ba677158ef6f06523406d5aa12d.ctex"
+uid="uid://mmuwmug6v8ay"
+path="res://.godot/imported/TableWood.png-05244aa8f6082cc18743684f3b5a8baf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Elementos/BoxWood.png"
-dest_files=["res://.godot/imported/BoxWood.png-75112ba677158ef6f06523406d5aa12d.ctex"]
+source_file="res://Elementos/Material/TableWood.png"
+dest_files=["res://.godot/imported/TableWood.png-05244aa8f6082cc18743684f3b5a8baf.ctex"]
 
 [params]
 

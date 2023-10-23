@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cqnwnyk4dwmav"
-path="res://.godot/imported/BoxWoodDamaged.png-1667c8ce8d69c2394d7b5f411f9e0346.ctex"
+path="res://.godot/imported/BoxWoodDamaged.png-5cf1b9888f35a8424eed01dc6b4298f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Elementos/BoxWoodDamaged.png"
-dest_files=["res://.godot/imported/BoxWoodDamaged.png-1667c8ce8d69c2394d7b5f411f9e0346.ctex"]
+source_file="res://Elementos/Material/BoxWoodDamaged.png"
+dest_files=["res://.godot/imported/BoxWoodDamaged.png-5cf1b9888f35a8424eed01dc6b4298f0.ctex"]
 
 [params]
 
