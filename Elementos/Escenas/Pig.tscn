@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://b473q7u8ubhvt"]
+
+[ext_resource type="Script" path="res://Elementos/block.gd" id="1_4li7s"]
+[ext_resource type="Texture2D" uid="uid://4ojm5cvw0kic" path="res://Elementos/Pig.png" id="3_g040g"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tdkbp"]
+
+[node name="Pig" type="RigidBody2D"]
+mass = 0.8
+gravity_scale = 0.7
+max_contacts_reported = 1
+contact_monitor = true
+script = ExtResource("1_4li7s")
+health = 10
+maxHealth = 10
+damaged = ExtResource("3_g040g")
+broken = ExtResource("3_g040g")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.38419e-07, -2.38419e-07)
+scale = Vector2(0.0600428, 0.0600428)
+texture = ExtResource("3_g040g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_tdkbp")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-2, -8, -6, -7, -10, -3, -12, 1, -11, 6, -9, 9, -4, 11, -0.488148, 11, 3, 11, 7, 10, 11, 7, 12, 2, 11, -2, 7, -6, 3, -8)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

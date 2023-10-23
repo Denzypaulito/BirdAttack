@@ -29,6 +29,7 @@ func _process(_delta):
 				var mp = get_viewport().get_mouse_position() - offset
 				var imp = (mp - Vector2(pole_position)).normalized()*-800*mass;
 				apply_impulse(imp)
+				#$"Resortera/BlueBirdFly".play()
 			if Input.is_action_just_pressed("triple") and collisionCount == 0 and power == true:
 				power = false
 				var triple_bird_scene = load("res://prefabs/triple_bird.tscn")
@@ -50,3 +51,4 @@ func fshot():
 
 func _on_body_entered(_body):
 	collisionCount+=1;
+		

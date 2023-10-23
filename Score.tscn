@@ -1,0 +1,227 @@
+[gd_scene load_steps=9 format=3 uid="uid://cxt3d7de7ct8g"]
+
+[ext_resource type="Script" path="res://Score.gd" id="1_dour0"]
+[ext_resource type="FontFile" uid="uid://cyjt4wgsdkk2k" path="res://Elementos/angrybirds-regular.ttf" id="1_me1kh"]
+[ext_resource type="Texture2D" uid="uid://bc3qo4ray08gx" path="res://Elementos/BirdBlue Sonido .png" id="3_phkv5"]
+[ext_resource type="AudioStream" uid="uid://b3ut6t7tbrobq" path="res://Elementos/Bird Attack Song.mp3" id="5_651pb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nidhn"]
+font = ExtResource("1_me1kh")
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_cbidm"]
+font = ExtResource("1_me1kh")
+font_size = 50
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_uejye"]
+font = ExtResource("1_me1kh")
+font_size = 45
+
+[sub_resource type="LabelSettings" id="LabelSettings_50nep"]
+font = ExtResource("1_me1kh")
+font_size = 50
+
+[node name="Score" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_dour0")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="lives" type="Label" parent="CanvasLayer"]
+custom_minimum_size = Vector2(1152, 648)
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 1162.0
+offset_bottom = 658.0
+text = "BIRDS: 0"
+label_settings = SubResource("LabelSettings_nidhn")
+metadata/_edit_use_anchors_ = true
+
+[node name="score" type="Label" parent="CanvasLayer"]
+custom_minimum_size = Vector2(1152, 648)
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 1142.0
+offset_bottom = 638.0
+text = "SCORE: 0"
+label_settings = SubResource("LabelSettings_nidhn")
+horizontal_alignment = 2
+vertical_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="level" type="Label" parent="CanvasLayer"]
+visibility_layer = 33
+custom_minimum_size = Vector2(1152, 648)
+offset_left = -10.0
+offset_top = 10.0
+offset_right = 1142.0
+offset_bottom = 658.0
+text = "LEVEL: 0
+"
+label_settings = SubResource("LabelSettings_cbidm")
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="PauseButton" type="TextureButton" parent="CanvasLayer"]
+texture_filter = 3
+offset_left = 1064.0
+offset_top = 52.0
+offset_right = 1131.0
+offset_bottom = 119.0
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Enemies" type="Label" parent="CanvasLayer"]
+visible = false
+offset_right = 1155.0
+offset_bottom = 641.0
+text = "Enemies 0/0"
+label_settings = SubResource("LabelSettings_uejye")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
+visible = false
+custom_minimum_size = Vector2(1152, 648)
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.952941, 0.541176, 0.290196, 0.270588)
+
+[node name="ContinueButton" type="TextureButton" parent="CanvasLayer2"]
+texture_filter = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.5
+offset_top = 96.0
+offset_right = 115.5
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CanvasLayer2/ContinueButton"]
+layout_mode = 0
+offset_top = 11.0
+offset_right = 231.0
+offset_bottom = 82.0
+theme_override_font_sizes/font_size = 50
+text = "CONTINUE"
+label_settings = SubResource("LabelSettings_50nep")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Mute Button" type="TextureButton" parent="CanvasLayer2"]
+process_mode = 3
+texture_filter = 3
+layout_direction = 2
+offset_left = 517.0
+offset_top = 287.0
+offset_right = 2517.0
+offset_bottom = 2287.0
+scale = Vector2(0.07, 0.07)
+texture_normal = ExtResource("3_phkv5")
+stretch_mode = 0
+
+[node name="RestartButton" type="TextureButton" parent="CanvasLayer2"]
+texture_filter = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.5
+offset_top = -114.0
+offset_right = 115.5
+offset_bottom = -22.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CanvasLayer2/RestartButton"]
+layout_mode = 0
+offset_top = 11.0
+offset_right = 231.0
+offset_bottom = 82.0
+theme_override_font_sizes/font_size = 50
+text = "restart"
+label_settings = SubResource("LabelSettings_50nep")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer3"]
+visible = false
+custom_minimum_size = Vector2(1152, 648)
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 1)
+
+[node name="HeroDie" type="Sprite2D" parent="CanvasLayer3"]
+visible = false
+texture_filter = 3
+position = Vector2(593, 309)
+rotation = -1.5708
+scale = Vector2(23.0178, 23.0178)
+
+[node name="Died" type="Label" parent="CanvasLayer3"]
+custom_minimum_size = Vector2(1152, 648)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -576.0
+offset_top = 50.0
+offset_right = 576.0
+offset_bottom = 698.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.671875, 0.195313, 0.195313, 1)
+theme_override_fonts/font = ExtResource("1_me1kh")
+theme_override_font_sizes/font_size = 200
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="ContinueButton2" type="TextureButton" parent="CanvasLayer3"]
+texture_filter = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.5
+offset_top = 116.0
+offset_right = 115.5
+offset_bottom = 208.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CanvasLayer3/ContinueButton2"]
+layout_mode = 0
+offset_top = 11.0
+offset_right = 231.0
+offset_bottom = 82.0
+theme_override_font_sizes/font_size = 50
+text = "CONTINUE"
+label_settings = SubResource("LabelSettings_50nep")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Song" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_651pb")
+volume_db = 12.0
+autoplay = true
+
+[connection signal="pressed" from="CanvasLayer/PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="pressed" from="CanvasLayer2/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="CanvasLayer2/Mute Button" to="." method="_on_mute_button_pressed"]
+[connection signal="pressed" from="CanvasLayer2/RestartButton" to="." method="_on_button_pressed2"]
+[connection signal="pressed" from="CanvasLayer3/ContinueButton2" to="." method="_on_button_pressed"]

@@ -1,20 +1,22 @@
-[gd_scene load_steps=15 format=3 uid="uid://drv5xc2j3ij5h"]
+[gd_scene load_steps=17 format=3 uid="uid://drv5xc2j3ij5h"]
 
-[ext_resource type="Texture2D" uid="uid://c6nmqqs6qe46v" path="res://Elementos/grass tileset.png" id="2_jh8tk"]
-[ext_resource type="Script" path="res://Resortera.gd" id="3_olivd"]
-[ext_resource type="Texture2D" uid="uid://dxu43fqt8vw7l" path="res://Elementos/Resortera.png" id="3_q87cr"]
-[ext_resource type="PackedScene" uid="uid://b8km7i2uaane1" path="res://Elementos/Escenas/box_wood.tscn" id="5_yhbli"]
-[ext_resource type="Texture2D" uid="uid://rnuj6ee643a5" path="res://Elementos/CieloReal.jpg" id="6_7e21f"]
-[ext_resource type="PackedScene" uid="uid://ddoihiulfvnak" path="res://Elementos/Escenas/box_stone.tscn" id="7_hyjw3"]
-[ext_resource type="PackedScene" uid="uid://dpe37822exiyf" path="res://Elementos/Escenas/triangle_wood.tscn" id="8_mndi7"]
-[ext_resource type="PackedScene" uid="uid://dau2gac863w1e" path="res://Elementos/Escenas/triangle_stone.tscn" id="9_538bj"]
-[ext_resource type="PackedScene" uid="uid://83bobavqkbb5" path="res://Elementos/Escenas/table_wood.tscn" id="10_kmvxq"]
-[ext_resource type="PackedScene" uid="uid://clahrwa56uvar" path="res://Elementos/Escenas/table_stone.tscn" id="11_tgcdq"]
+[ext_resource type="Texture2D" uid="uid://c6nmqqs6qe46v" path="res://Elementos/grass tileset.png" id="1_x43h4"]
+[ext_resource type="Texture2D" uid="uid://dxu43fqt8vw7l" path="res://Elementos/Resortera.png" id="2_co0x6"]
+[ext_resource type="Script" path="res://Resortera.gd" id="3_6tk84"]
+[ext_resource type="Texture2D" uid="uid://rnuj6ee643a5" path="res://Elementos/CieloReal.jpg" id="4_djttb"]
+[ext_resource type="PackedScene" uid="uid://b8km7i2uaane1" path="res://Elementos/Escenas/box_wood.tscn" id="5_gh0ls"]
+[ext_resource type="PackedScene" uid="uid://ddoihiulfvnak" path="res://Elementos/Escenas/box_stone.tscn" id="6_al1p4"]
+[ext_resource type="PackedScene" uid="uid://dpe37822exiyf" path="res://Elementos/Escenas/triangle_wood.tscn" id="7_a8n1q"]
+[ext_resource type="PackedScene" uid="uid://dau2gac863w1e" path="res://Elementos/Escenas/triangle_stone.tscn" id="8_r4ade"]
+[ext_resource type="PackedScene" uid="uid://83bobavqkbb5" path="res://Elementos/Escenas/table_wood.tscn" id="9_y0c3b"]
+[ext_resource type="PackedScene" uid="uid://clahrwa56uvar" path="res://Elementos/Escenas/table_stone.tscn" id="10_du1mv"]
+[ext_resource type="PackedScene" uid="uid://b473q7u8ubhvt" path="res://Elementos/Escenas/Pig.tscn" id="11_58ufm"]
+[ext_resource type="AudioStream" uid="uid://be6abov03pfx4" path="res://Elementos/BlueBirdFly.mp3" id="12_d5rvw"]
 
 [sub_resource type="GDScript" id="GDScript_usvm8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m05xa"]
-texture = ExtResource("2_jh8tk")
+texture = ExtResource("1_x43h4")
 8:0/0 = 0
 8:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:0/0/physics_layer_0/angular_velocity = 0.0
@@ -536,17 +538,22 @@ shape = SubResource("WorldBoundaryShape2D_t8urj")
 [node name="Resortera" type="Sprite2D" parent="."]
 position = Vector2(127.75, 470.25)
 scale = Vector2(0.31125, 0.31125)
-texture = ExtResource("3_q87cr")
+texture = ExtResource("2_co0x6")
+
+[node name="BlueBirdFly" type="AudioStreamPlayer2D" parent="Resortera"]
+position = Vector2(-410.442, -1510.84)
+scale = Vector2(3.21285, 3.21285)
+stream = ExtResource("12_d5rvw")
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(128, 426)
-script = ExtResource("3_olivd")
+script = ExtResource("3_6tk84")
 
 [node name="CieloReal" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(664.063, 337)
 scale = Vector2(0.867325, 0.688265)
-texture = ExtResource("6_7e21f")
+texture = ExtResource("4_djttb")
 
 [node name="Button" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -555,77 +562,80 @@ offset_top = 418.0
 offset_right = 143.0
 offset_bottom = 443.0
 
-[node name="BoxWood" parent="." instance=ExtResource("5_yhbli")]
+[node name="BoxWood" parent="." instance=ExtResource("5_gh0ls")]
 position = Vector2(734, 515)
 
-[node name="BoxWood2" parent="." instance=ExtResource("5_yhbli")]
+[node name="BoxWood2" parent="." instance=ExtResource("5_gh0ls")]
 position = Vector2(735, 490)
 
-[node name="BoxWood3" parent="." instance=ExtResource("5_yhbli")]
+[node name="BoxWood3" parent="." instance=ExtResource("5_gh0ls")]
 position = Vector2(735, 465)
 
-[node name="BoxWood4" parent="." instance=ExtResource("5_yhbli")]
+[node name="BoxWood4" parent="." instance=ExtResource("5_gh0ls")]
 position = Vector2(735, 439)
 
-[node name="BoxWood5" parent="." instance=ExtResource("5_yhbli")]
+[node name="BoxWood5" parent="." instance=ExtResource("5_gh0ls")]
 position = Vector2(735, 414)
 
-[node name="BoxWood6" parent="." instance=ExtResource("5_yhbli")]
+[node name="BoxWood6" parent="." instance=ExtResource("5_gh0ls")]
 position = Vector2(840, 513)
 
-[node name="BoxWood7" parent="." instance=ExtResource("5_yhbli")]
+[node name="BoxWood7" parent="." instance=ExtResource("5_gh0ls")]
 position = Vector2(840, 486)
 
-[node name="BoxWood8" parent="." instance=ExtResource("5_yhbli")]
+[node name="BoxWood8" parent="." instance=ExtResource("5_gh0ls")]
 position = Vector2(840, 459)
 
-[node name="BoxWood9" parent="." instance=ExtResource("5_yhbli")]
+[node name="BoxWood9" parent="." instance=ExtResource("5_gh0ls")]
 position = Vector2(840, 433)
 
-[node name="BoxWood10" parent="." instance=ExtResource("5_yhbli")]
+[node name="BoxWood10" parent="." instance=ExtResource("5_gh0ls")]
 position = Vector2(840, 406)
 
-[node name="BoxWood11" parent="." instance=ExtResource("5_yhbli")]
+[node name="BoxWood11" parent="." instance=ExtResource("5_gh0ls")]
 position = Vector2(937, 488)
 
-[node name="BoxWood12" parent="." instance=ExtResource("5_yhbli")]
+[node name="BoxWood12" parent="." instance=ExtResource("5_gh0ls")]
 position = Vector2(938, 514)
 
-[node name="BoxStone" parent="." instance=ExtResource("7_hyjw3")]
+[node name="BoxStone" parent="." instance=ExtResource("6_al1p4")]
 position = Vector2(736, 386)
 
-[node name="BoxStone2" parent="." instance=ExtResource("7_hyjw3")]
+[node name="BoxStone2" parent="." instance=ExtResource("6_al1p4")]
 position = Vector2(842, 379)
 
-[node name="BoxStone3" parent="." instance=ExtResource("7_hyjw3")]
+[node name="BoxStone3" parent="." instance=ExtResource("6_al1p4")]
 position = Vector2(938, 383)
 
-[node name="BoxWood13" parent="." instance=ExtResource("5_yhbli")]
+[node name="BoxWood13" parent="." instance=ExtResource("5_gh0ls")]
 position = Vector2(938, 462)
 
-[node name="BoxWood14" parent="." instance=ExtResource("5_yhbli")]
+[node name="BoxWood14" parent="." instance=ExtResource("5_gh0ls")]
 position = Vector2(939, 436)
 
-[node name="BoxWood15" parent="." instance=ExtResource("5_yhbli")]
+[node name="BoxWood15" parent="." instance=ExtResource("5_gh0ls")]
 position = Vector2(939, 410)
 
-[node name="BoxWood16" parent="." instance=ExtResource("8_mndi7")]
+[node name="BoxWood16" parent="." instance=ExtResource("7_a8n1q")]
 position = Vector2(736, 354)
 
-[node name="BoxWood18" parent="." instance=ExtResource("8_mndi7")]
+[node name="BoxWood18" parent="." instance=ExtResource("7_a8n1q")]
 position = Vector2(938, 350)
 
-[node name="BoxWood17" parent="." instance=ExtResource("9_538bj")]
+[node name="BoxWood17" parent="." instance=ExtResource("8_r4ade")]
 position = Vector2(842, 347)
 
-[node name="BoxWood19" parent="." instance=ExtResource("10_kmvxq")]
+[node name="BoxWood19" parent="." instance=ExtResource("9_y0c3b")]
 position = Vector2(736, 370)
 
-[node name="BoxWood20" parent="." instance=ExtResource("10_kmvxq")]
+[node name="BoxWood20" parent="." instance=ExtResource("9_y0c3b")]
 position = Vector2(938, 366)
 
-[node name="BoxWood21" parent="." instance=ExtResource("11_tgcdq")]
+[node name="BoxWood21" parent="." instance=ExtResource("10_du1mv")]
 position = Vector2(842, 363)
+
+[node name="Pig2" parent="." instance=ExtResource("11_58ufm")]
+position = Vector2(819, 346)
 
 [connection signal="button_down" from="Button" to="Node2D" method="_on_button_button_down"]
 [connection signal="button_up" from="Button" to="Node2D" method="_on_button_button_up"]
