@@ -540,11 +540,6 @@ position = Vector2(127.75, 470.25)
 scale = Vector2(0.31125, 0.31125)
 texture = ExtResource("2_co0x6")
 
-[node name="BlueBirdFly" type="AudioStreamPlayer2D" parent="Resortera"]
-position = Vector2(-410.442, -1510.84)
-scale = Vector2(3.21285, 3.21285)
-stream = ExtResource("12_d5rvw")
-
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(128, 426)
 script = ExtResource("3_6tk84")
@@ -636,6 +631,9 @@ position = Vector2(842, 363)
 
 [node name="Pig2" parent="." instance=ExtResource("11_58ufm")]
 position = Vector2(819, 346)
+
+[node name="BlueBirdFly" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_d5rvw")
 
 [connection signal="button_down" from="Button" to="Node2D" method="_on_button_button_down"]
 [connection signal="button_up" from="Button" to="Node2D" method="_on_button_button_up"]
