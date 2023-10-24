@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=3 uid="uid://dscmlcpo7rjj6"]
+
+[ext_resource type="Texture2D" uid="uid://bafbdkbkmdlux" path="res://BirdBlue.png" id="1_6cp7d"]
+[ext_resource type="FontFile" uid="uid://cyjt4wgsdkk2k" path="res://Elementos/angrybirds-regular.ttf" id="2_ry4c0"]
+[ext_resource type="Texture2D" uid="uid://bjs8vgjpl1cev" path="res://Menu2 AngryBirds.png" id="3_usx5p"]
+[ext_resource type="Script" path="res://LevelManager.gd" id="4_ybnoc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gk5wy"]
+font = ExtResource("2_ry4c0")
+font_size = 50
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer3"]
+custom_minimum_size = Vector2(1152, 648)
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(1, 0.803922, 0.00392157, 1)
+
+[node name="BirdBlue" type="Sprite2D" parent="CanvasLayer3"]
+texture_filter = 3
+position = Vector2(159, 452)
+scale = Vector2(0.413358, 0.413358)
+texture = ExtResource("1_6cp7d")
+
+[node name="Died" type="Label" parent="CanvasLayer3"]
+custom_minimum_size = Vector2(1152, 648)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -576.0
+offset_top = 50.0
+offset_right = 576.0
+offset_bottom = 698.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.671875, 0.195313, 0.195313, 1)
+theme_override_fonts/font = ExtResource("2_ry4c0")
+theme_override_font_sizes/font_size = 200
+text = "you win"
+horizontal_alignment = 1
+
+[node name="ContinueButton2" type="TextureButton" parent="CanvasLayer3"]
+texture_filter = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -161.0
+offset_top = 74.0
+offset_right = 161.0
+offset_bottom = 251.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_usx5p")
+stretch_mode = 5
+script = ExtResource("4_ybnoc")
+
+[node name="Label" type="Label" parent="CanvasLayer3/ContinueButton2"]
+layout_mode = 0
+offset_top = 47.0
+offset_right = 322.0
+offset_bottom = 121.0
+theme_override_font_sizes/font_size = 50
+text = "RESTART"
+label_settings = SubResource("LabelSettings_gk5wy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="CanvasLayer3/ContinueButton2" to="CanvasLayer3/ContinueButton2" method="loadFirstLevel"]

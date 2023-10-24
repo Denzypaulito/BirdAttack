@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dn5k6uayxrl6u"]
+[gd_scene load_steps=7 format=3 uid="uid://dn5k6uayxrl6u"]
 
 [ext_resource type="Script" path="res://prefabs/bird.gd" id="1_pdwsl"]
 [ext_resource type="Texture2D" uid="uid://bfg5mw7uo3bgk" path="res://Elementos/BirdBlue.png" id="2_ws405"]
+[ext_resource type="AudioStream" uid="uid://dbhitwjs3uh2h" path="res://BlueBirdFly Launch.mp3" id="3_xnv5k"]
+[ext_resource type="AudioStream" uid="uid://d2qgbekk06itd" path="res://BlueBirdFlyTriple.mp3" id="4_jyoux"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e7jfb"]
 bounce = 0.4
@@ -25,5 +27,13 @@ scale = Vector2(0.019043, 0.019043)
 texture = ExtResource("2_ws405")
 
 [node name="BirdContainer" type="Node" parent="."]
+
+[node name="BlueBirdFly" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_xnv5k")
+volume_db = 12.0
+
+[node name="BlueBirdTriple" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_jyoux")
+volume_db = 12.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -15,14 +15,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if health <= (maxHealth*0.75):
-		sprite.set_texture(damaged)
-	if health <= (maxHealth*0.25):
-		sprite.set_texture(broken)
 	if health <= 0:
-		$"/root/Score".on_score()
+		for i in range(5):
+			$"/root/Score".on_score()
 		queue_free()
-	#print(linear_velocity.length())
+		LevelManager.enemyDeath()
 
 
 func _on_body_entered(body):

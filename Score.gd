@@ -2,7 +2,7 @@ extends Node2D
 
 var score  = 0
 var level  = 0
-var birds = 3
+var birds = 4
 var is_paused = false
 var no_mute = true
 var enemies_kill = 0
@@ -15,16 +15,16 @@ func _ready():
 		#else:
 			#pause_game()
 
-func on_player_death():
-	$Song.stop()
-	is_paused = true
-	get_tree().paused = true
-	$CanvasLayer3.show()
+#func on_player_death():
+	#$Song.stop()
+	#is_paused = true
+	#get_tree().paused = true
+	#$CanvasLayer3.show()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if not is_paused:
-		$CanvasLayer/lives.text = "BIRDS: " + str(birds)
+		$CanvasLayer/birds.text = "BIRDS: " + str(birds)
 		$CanvasLayer/score.text = "SCORE: " + str(score)
 		$CanvasLayer/level.text = "LEVEL: " + str(level)
 		#var total_enemies = LevelManager.getTotalEnemiesInLevel()
@@ -53,6 +53,7 @@ func resume_game():
 func _on_button_pressed():
 	resume_game()
 	$CanvasLayer3.hide()
+	$CanvasLayer.show()
 	$Song.play()
 	LevelManager.loadFirstLevel()
 	
@@ -61,8 +62,8 @@ func _on_button_pressed2():
 	$CanvasLayer3.hide()
 	$Song.play()
 	get_tree().reload_current_scene()
-	
-	
+	birds = 4
+	score  = 0
 
 func _on_continue_button_pressed():
 	resume_game()
@@ -70,13 +71,12 @@ func _on_continue_button_pressed():
 
 func _on_pause_button_pressed():
 	pause_game()
-
-
+	
 func _on_mute_button_pressed():
 	if not no_mute:
 		no_mute = true
 		$"CanvasLayer2/Mute Button".texture_normal = preload("res://Elementos/BirdBlue Sonido .png")  
-		$Song.volume_db = 12  
+		$Song.volume_db = 0 
 		
 	else:
 		no_mute = false
@@ -87,5 +87,5 @@ func on_score():
 	score += 10
 	
 
-
- 
+func _on_continue_button_2_pressed():
+	LevelManager.loadNextLevel()

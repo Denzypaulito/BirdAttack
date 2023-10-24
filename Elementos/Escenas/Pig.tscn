@@ -6,7 +6,7 @@
 [sub_resource type="SpriteFrames" id="SpriteFrames_tdkbp"]
 
 [node name="Pig" type="RigidBody2D"]
-mass = 0.8
+mass = 2.0
 gravity_scale = 0.7
 max_contacts_reported = 1
 contact_monitor = true
