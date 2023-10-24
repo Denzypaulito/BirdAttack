@@ -4,11 +4,24 @@ var isShot = true;
 var doShot = false;
 var shooting = false;
 
+var triple_bird_scene = load("res://prefabs/triple_bird.tscn");
 var pole_position;
 var offset;
 var prev_position;
 var collisionCount;
 var power;
+
+func instance_bird():
+	var instance = triple_bird_scene.instantiate()
+	instance.global_position = global_position 
+	var bird_container = $BirdContainer  # Reemplaza "$BirdContainer" con el nombre correcto del nodo.
+	
+	if bird_container:
+		bird_container.add_child(instance)
+	else:
+		pass
+	# Si no se encuentra el contenedor, agrega el pájaro a la raíz.
+		#get_tree().get_root().add_child(instance)
 
 func _ready():
 	pole_position = Vector2(0,0);
@@ -16,6 +29,7 @@ func _ready():
 	freeze = true;
 	collisionCount = 0;
 	power = false;
+	
 func _process(_delta):
 	#if not isShot:
 		if shooting:
@@ -32,10 +46,7 @@ func _process(_delta):
 				#$"Resortera/BlueBirdFly".play()
 			if Input.is_action_just_pressed("triple") and collisionCount == 0 and power == true:
 				power = false
-				var triple_bird_scene = load("res://prefabs/triple_bird.tscn")
-				var triple_bird_instance = triple_bird_scene.instantiate()
-				triple_bird_instance.global_position = global_position 
-				get_tree().get_root().add_child(triple_bird_instance)
+				instance_bird()
 			doShot = false
 			#isShot = true
 

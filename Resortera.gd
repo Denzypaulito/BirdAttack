@@ -21,6 +21,7 @@ func _ready():
 func _process(delta):
 	if currentBird == null and Input.is_action_just_pressed("test"):
 		instance_bird()
+	
 		
 func _on_button_button_down():
 	if currentBird:

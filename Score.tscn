@@ -27,7 +27,6 @@ process_mode = 3
 script = ExtResource("1_dour0")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="lives" type="Label" parent="CanvasLayer"]
 custom_minimum_size = Vector2(1152, 648)
