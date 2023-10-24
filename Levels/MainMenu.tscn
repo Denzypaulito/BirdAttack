@@ -7,7 +7,6 @@
 [ext_resource type="Script" path="res://Resortera.gd" id="3_2bqdx"]
 [ext_resource type="Texture2D" uid="uid://bjs8vgjpl1cev" path="res://Menu2 AngryBirds.png" id="3_8voih"]
 [ext_resource type="Texture2D" uid="uid://bfg5mw7uo3bgk" path="res://Elementos/BirdBlue.png" id="4_2450j"]
-[ext_resource type="Script" path="res://LevelManager.gd" id="4_igedn"]
 [ext_resource type="Texture2D" uid="uid://rnuj6ee643a5" path="res://Elementos/CieloReal.jpg" id="5_olhb0"]
 [ext_resource type="PackedScene" uid="uid://b8km7i2uaane1" path="res://Elementos/Escenas/box_wood.tscn" id="6_l8in7"]
 [ext_resource type="PackedScene" uid="uid://ddoihiulfvnak" path="res://Elementos/Escenas/box_stone.tscn" id="7_cfc5n"]
@@ -16,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://clahrwa56uvar" path="res://Elementos/Escenas/table_stone.tscn" id="10_oa2n7"]
 [ext_resource type="PackedScene" uid="uid://b473q7u8ubhvt" path="res://Elementos/Escenas/Pig.tscn" id="11_vdy6p"]
 [ext_resource type="Script" path="res://Elementos/Escenas/Pig.gd" id="12_vqo20"]
+[ext_resource type="Script" path="res://Levels/PlayBtn.gd" id="16_nofvl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m05xa"]
 texture = ExtResource("1_2vkxt")
@@ -681,7 +681,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("3_8voih")
 stretch_mode = 5
-script = ExtResource("4_igedn")
+script = ExtResource("16_nofvl")
 
 [node name="Label" type="Label" parent="CanvasLayer3/ContinueButton2"]
 layout_mode = 0

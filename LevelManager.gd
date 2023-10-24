@@ -35,7 +35,7 @@ func enemyDeath():
 		$"/root/Score/CanvasLayer".visible = false
 		
 func getTotalEnemiesInLevel():
-	return enemiesInLevel[curr]
+	return enemiesInLevel[curr+1]
 	
 func getNextLevel():
 	curr += 1
@@ -65,6 +65,6 @@ func loadFirstLevel():
 	Score.score = 0
 	loadNextLevel()
 
-func _on_pressed():
-	$"/root/Score/CanvasLayer".visible = true
-	loadNextLevel()
+#func _on_pressed():
+	#$"/root/Score/CanvasLayer".visible = true
+	#loadNextLevel()

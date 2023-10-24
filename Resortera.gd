@@ -38,13 +38,15 @@ func _process(_delta):
 		
 		
 func _on_button_button_down():
-	if currentBird:
-		currentBird.fshooting()
+	if not $"/root/Score/".is_paused:
+		if currentBird:
+			currentBird.fshooting()
 		
 
 func _on_button_button_up():
-	if currentBird:
-		currentBird.fshot()
-		currentBird = null 
-		timer = 1
+	if not $"/root/Score/".is_paused:
+		if currentBird:
+			currentBird.fshot()
+			currentBird = null 
+			timer = 1
 
