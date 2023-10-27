@@ -55,6 +55,7 @@ func _on_button_pressed():
 	$CanvasLayer3.hide()
 	$CanvasLayer.show()
 	$Song.play()
+	level = 0
 	LevelManager.loadFirstLevel()
 	
 func _on_button_pressed2():

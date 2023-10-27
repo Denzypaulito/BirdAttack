@@ -61,7 +61,7 @@ func loadNextLevel():
 func loadFirstLevel():
 	get_tree().paused = false
 	curr = -1
-	Score.level = 1
+	Score.level = 0
 	Score.score = 0
 	loadNextLevel()
 
