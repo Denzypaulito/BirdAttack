@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://clmmokt8ys05s"]
+[gd_scene load_steps=23 format=3 uid="uid://clmmokt8ys05s"]
 
 [ext_resource type="Texture2D" uid="uid://c6nmqqs6qe46v" path="res://Elementos/grass tileset.png" id="1_2vkxt"]
 [ext_resource type="Script" path="res://Levels/MainMenu.gd" id="1_3dbje"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://clahrwa56uvar" path="res://Elementos/Escenas/table_stone.tscn" id="10_oa2n7"]
 [ext_resource type="PackedScene" uid="uid://b473q7u8ubhvt" path="res://Elementos/Escenas/Pig.tscn" id="11_vdy6p"]
 [ext_resource type="Script" path="res://Elementos/Escenas/Pig.gd" id="12_vqo20"]
+[ext_resource type="Texture2D" uid="uid://roujllj8iqfk" path="res://Menu AngryBirds.png" id="14_tj8sd"]
 [ext_resource type="Script" path="res://Levels/PlayBtn.gd" id="16_nofvl"]
 [ext_resource type="Texture2D" uid="uid://co818eah7erv8" path="res://Levels/EscudoUach.png" id="17_pfa15"]
 
@@ -651,6 +652,16 @@ broken = null
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
 
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer3"]
+position = Vector2(203, 588)
+scale = Vector2(1.22981, 0.666667)
+texture = ExtResource("14_tj8sd")
+
+[node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer3"]
+position = Vector2(1012, 590.5)
+scale = Vector2(0.906832, 0.649717)
+texture = ExtResource("14_tj8sd")
+
 [node name="Died" type="Label" parent="CanvasLayer3"]
 custom_minimum_size = Vector2(1152, 648)
 anchors_preset = 5
@@ -700,15 +711,15 @@ custom_minimum_size = Vector2(1152, 648)
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -565.0
-offset_top = 530.0
-offset_right = 3008.0
-offset_bottom = 1700.0
+offset_left = -552.0
+offset_top = 541.0
+offset_right = 3058.0
+offset_bottom = 1601.0
 grow_horizontal = 2
 scale = Vector2(0.1, 0.1)
 theme_override_colors/font_color = Color(0.671875, 0.195313, 0.195313, 1)
 theme_override_fonts/font = ExtResource("2_rwuuw")
-theme_override_font_sizes/font_size = 200
+theme_override_font_sizes/font_size = 160
 text = "Universidad Autónoma de Chihuahua
 Facultad de Ingeniería
 Ing. Ciencias De La Computación
@@ -732,7 +743,7 @@ theme_override_font_sizes/font_size = 200
 text = "Prof. Alberto Pacheco González"
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer3"]
-position = Vector2(1052, 529)
+position = Vector2(1015, 538)
 scale = Vector2(0.25625, 0.25625)
 texture = ExtResource("17_pfa15")
 
