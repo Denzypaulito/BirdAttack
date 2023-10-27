@@ -59,12 +59,14 @@ func _on_button_pressed():
 	LevelManager.loadFirstLevel()
 	
 func _on_button_pressed2():
-	resume_game()
-	$CanvasLayer3.hide()
-	$Song.play()
-	get_tree().reload_current_scene()
-	birds = 4
-	score  = 0
+	_on_button_pressed()
+	#resume_game()
+	#$CanvasLayer3.hide()
+	#$Song.play()
+	#get_tree().reload_current_scene()
+	#birds = 4
+	#score  = 0
+	
 
 func _on_continue_button_pressed():
 	resume_game()
