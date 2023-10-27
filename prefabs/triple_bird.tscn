@@ -1,15 +1,15 @@
 [gd_scene load_steps=2 format=3 uid="uid://1kh3csvb3fky"]
 
-[ext_resource type="PackedScene" uid="uid://dn5k6uayxrl6u" path="res://prefabs/bird_prefab.tscn" id="1_qgoea"]
+[ext_resource type="PackedScene" uid="uid://c3tbwbt0jbs2u" path="res://prefabs/bird_prefab2.tscn" id="1_jrl7w"]
 
 [node name="TripleBird" type="Node2D"]
 
-[node name="bird_prefab2" parent="." instance=ExtResource("1_qgoea")]
+[node name="bird_prefab4" parent="." instance=ExtResource("1_jrl7w")]
 position = Vector2(0, -21)
 linear_velocity = Vector2(559, 0)
 script = null
 
-[node name="bird_prefab3" parent="." instance=ExtResource("1_qgoea")]
+[node name="bird_prefab" parent="." instance=ExtResource("1_jrl7w")]
 position = Vector2(0, 21)
 linear_velocity = Vector2(250, 500)
 script = null

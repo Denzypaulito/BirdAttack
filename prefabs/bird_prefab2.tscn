@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://c3tbwbt0jbs2u"]
+
+[ext_resource type="Script" path="res://prefabs/bird.gd" id="1_mtge4"]
+[ext_resource type="Texture2D" uid="uid://bfg5mw7uo3bgk" path="res://Elementos/BirdBlue.png" id="2_u0hbr"]
+[ext_resource type="AudioStream" uid="uid://dbhitwjs3uh2h" path="res://BlueBirdFly Launch.mp3" id="3_7c48n"]
+[ext_resource type="AudioStream" uid="uid://d2qgbekk06itd" path="res://BlueBirdFlyTriple.mp3" id="4_taxbf"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e7jfb"]
+bounce = 0.4
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xf7rr"]
+
+[node name="bird_prefab" type="RigidBody2D"]
+mass = 5.0
+physics_material_override = SubResource("PhysicsMaterial_e7jfb")
+continuous_cd = 2
+max_contacts_reported = 20
+contact_monitor = true
+script = ExtResource("1_mtge4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xf7rr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-3.8147e-06, 0)
+scale = Vector2(0.019043, 0.019043)
+texture = ExtResource("2_u0hbr")
+
+[node name="BirdContainer" type="Node" parent="."]
+
+[node name="BlueBirdFly" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_7c48n")
+volume_db = 12.0
+
+[node name="BlueBirdTriple" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_taxbf")
+volume_db = 12.0
