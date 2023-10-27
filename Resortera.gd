@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name Resortera
+
 static var width = ProjectSettings.get_setting("display/window/size/viewport_width")
 static var height = ProjectSettings.get_setting("display/window/size/viewport_height")
 
@@ -10,10 +12,13 @@ var timer = 0
 var currentBird = null 
 var birds = 4
 
+var last_bird
+
 func instance_bird():
 	var instance = bird_scene.instantiate()
 	currentBird = instance
 	instance.offset  = get_position()
+	last_bird = instance
 	self.add_child(instance)
 	
 	
@@ -47,6 +52,7 @@ func _on_button_button_up():
 	if not $"/root/Score/".is_paused:
 		if currentBird:
 			currentBird.fshot()
-			currentBird = null 
+			currentBird = null
+			last_bird = null
 			timer = 1
 

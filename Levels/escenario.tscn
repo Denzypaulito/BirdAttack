@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://drv5xc2j3ij5h"]
+[gd_scene load_steps=19 format=3 uid="uid://drv5xc2j3ij5h"]
 
 [ext_resource type="Texture2D" uid="uid://c6nmqqs6qe46v" path="res://Elementos/grass tileset.png" id="1_x43h4"]
 [ext_resource type="Texture2D" uid="uid://dxu43fqt8vw7l" path="res://Elementos/Resortera.png" id="2_co0x6"]
@@ -6,11 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://bfg5mw7uo3bgk" path="res://Elementos/BirdBlue.png" id="4_368k6"]
 [ext_resource type="Texture2D" uid="uid://rnuj6ee643a5" path="res://Elementos/CieloReal.jpg" id="4_djttb"]
 [ext_resource type="PackedScene" uid="uid://b8km7i2uaane1" path="res://Elementos/Escenas/box_wood.tscn" id="5_gh0ls"]
+[ext_resource type="Script" path="res://Levels/ResorteraLinea.gd" id="5_kxws3"]
 [ext_resource type="PackedScene" uid="uid://dpe37822exiyf" path="res://Elementos/Escenas/triangle_wood.tscn" id="7_a8n1q"]
 [ext_resource type="PackedScene" uid="uid://dau2gac863w1e" path="res://Elementos/Escenas/triangle_stone.tscn" id="8_r4ade"]
 [ext_resource type="PackedScene" uid="uid://83bobavqkbb5" path="res://Elementos/Escenas/table_wood.tscn" id="9_y0c3b"]
 [ext_resource type="PackedScene" uid="uid://clahrwa56uvar" path="res://Elementos/Escenas/table_stone.tscn" id="10_du1mv"]
 [ext_resource type="PackedScene" uid="uid://b473q7u8ubhvt" path="res://Elementos/Escenas/Pig.tscn" id="11_58ufm"]
+[ext_resource type="PackedScene" uid="uid://dbdqnintuwmal" path="res://Elementos/Escenas/uach.tscn" id="13_ld5ca"]
 [ext_resource type="Script" path="res://Elementos/Escenas/Pig.gd" id="13_y74q8"]
 
 [sub_resource type="GDScript" id="GDScript_usvm8"]
@@ -567,6 +569,20 @@ position = Vector2(-61, 93)
 scale = Vector2(0.0198975, 0.0198975)
 texture = ExtResource("4_368k6")
 
+[node name="Line2D" type="Line2D" parent="Node2D" node_paths=PackedStringArray("resortera")]
+position = Vector2(-128, -426)
+points = PackedVector2Array(142, 431, 126, 437)
+default_color = Color(0.258824, 0.14902, 0, 1)
+script = ExtResource("5_kxws3")
+resortera = NodePath("..")
+
+[node name="Line2D2" type="Line2D" parent="Node2D" node_paths=PackedStringArray("resortera")]
+position = Vector2(-128, -426)
+points = PackedVector2Array(115, 429, 129, 438)
+default_color = Color(0.258824, 0.14902, 0, 1)
+script = ExtResource("5_kxws3")
+resortera = NodePath("..")
+
 [node name="CieloReal" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(666, 338)
@@ -684,10 +700,16 @@ broken = null
 position = Vector2(807, 283)
 
 [node name="BoxWood30" parent="." instance=ExtResource("8_r4ade")]
-position = Vector2(728, 514)
+position = Vector2(727, 486)
 
 [node name="BoxWood31" parent="." instance=ExtResource("8_r4ade")]
-position = Vector2(885, 514)
+position = Vector2(886, 486)
+
+[node name="BoxStone2" parent="." instance=ExtResource("13_ld5ca")]
+position = Vector2(727, 513)
+
+[node name="BoxStone3" parent="." instance=ExtResource("13_ld5ca")]
+position = Vector2(887, 514)
 
 [connection signal="button_down" from="Button" to="Node2D" method="_on_button_button_down"]
 [connection signal="button_up" from="Button" to="Node2D" method="_on_button_button_up"]

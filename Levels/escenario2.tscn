@@ -1,10 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://cdd5px3yw08h1"]
+[gd_scene load_steps=15 format=3 uid="uid://cdd5px3yw08h1"]
 
 [ext_resource type="Texture2D" uid="uid://c6nmqqs6qe46v" path="res://Elementos/grass tileset.png" id="1_ps3pq"]
 [ext_resource type="Texture2D" uid="uid://dxu43fqt8vw7l" path="res://Elementos/Resortera.png" id="2_sqil4"]
 [ext_resource type="Script" path="res://Resortera.gd" id="3_t8831"]
 [ext_resource type="Texture2D" uid="uid://bfg5mw7uo3bgk" path="res://Elementos/BirdBlue.png" id="4_57ysg"]
 [ext_resource type="Texture2D" uid="uid://rnuj6ee643a5" path="res://Elementos/CieloReal.jpg" id="5_uyvlv"]
+[ext_resource type="Script" path="res://Levels/ResorteraLinea.gd" id="6_td8j8"]
+[ext_resource type="PackedScene" uid="uid://dbdqnintuwmal" path="res://Elementos/Escenas/uach.tscn" id="9_h5731"]
 [ext_resource type="PackedScene" uid="uid://83bobavqkbb5" path="res://Elementos/Escenas/table_wood.tscn" id="10_bseo4"]
 [ext_resource type="PackedScene" uid="uid://b473q7u8ubhvt" path="res://Elementos/Escenas/Pig.tscn" id="12_541le"]
 [ext_resource type="Script" path="res://Elementos/Escenas/Pig.gd" id="13_32er3"]
@@ -571,6 +573,20 @@ position = Vector2(-61, 93)
 scale = Vector2(0.0198975, 0.0198975)
 texture = ExtResource("4_57ysg")
 
+[node name="Line2D" type="Line2D" parent="Node2D" node_paths=PackedStringArray("resortera")]
+position = Vector2(-128, -426)
+points = PackedVector2Array(142, 431, 126, 437)
+default_color = Color(0.258824, 0.14902, 0, 1)
+script = ExtResource("6_td8j8")
+resortera = NodePath("..")
+
+[node name="Line2D2" type="Line2D" parent="Node2D" node_paths=PackedStringArray("resortera")]
+position = Vector2(-128, -426)
+points = PackedVector2Array(115, 429, 129, 438)
+default_color = Color(0.258824, 0.14902, 0, 1)
+script = ExtResource("6_td8j8")
+resortera = NodePath("..")
+
 [node name="Button" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
 offset_left = 118.0
@@ -629,6 +645,12 @@ rotation = 1.5708
 
 [node name="BoxWood12" parent="." instance=ExtResource("10_bseo4")]
 position = Vector2(850, 392)
+
+[node name="BoxStone" parent="." instance=ExtResource("9_h5731")]
+position = Vector2(417, 509)
+
+[node name="BoxStone2" parent="." instance=ExtResource("9_h5731")]
+position = Vector2(992, 511)
 
 [connection signal="button_down" from="Button" to="Node2D" method="_on_button_button_down"]
 [connection signal="button_up" from="Button" to="Node2D" method="_on_button_button_up"]
